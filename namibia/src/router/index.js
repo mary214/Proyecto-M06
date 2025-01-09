@@ -1,14 +1,15 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import Home from '../components/HomeView.vue';
-import Ropa from '../components/RopaComponent.vue';
-import Calzado from '../components/CalzadoComponent.vue';
-import Complementos from '../components/ComplementosComponent.vue';
+import HomeView from '../components/HomeView.vue';
+import RopaComponent from '../components/RopaComponent.vue';
+import CalzadoComponent from '../components/CalzadoComponent.vue';
+import ComplementosComponent from '../components/ComplementosComponent.vue';
+
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/ropa', component: Ropa },
-  { path: '/calzado', component: Calzado },
-  { path: '/complementos', component: Complementos },
+  { path: '/', component: HomeView },
+  { path: '/ropa', component: RopaComponent },
+  { path: '/calzado', component: CalzadoComponent },
+  { path: '/complementos', component: ComplementosComponent },
 ];
 
 // Llamada a crear router, con dos parametros
