@@ -1,23 +1,71 @@
-<!-- ESTO ESTA MAL CONFIGURADO -->
 <template>
-  <header>
-    <nav>
-      <router-link to="/">Inici</router-link> |
-      <router-link to="/ropa">Ropa</router-link> |
-      <router-link to="/calzado">Calzado</router-link> |
-      <router-link to="/complementos">Complementos</router-link>
+  <header class="d-flex justify-content-between align-items-center p-3 bg-light border-bottom">
+    <div class="logo">
+      <img alt="Logo NAMIBIA" :src="logoSrc">
+
+    </div>
+    <nav class="navigation">
+      <router-link to="/" class="nav-link">Inici</router-link>
+      <router-link to="/ropa" class="nav-link">Ropa</router-link>
+      <router-link to="/calzado" class="nav-link">Calzado</router-link>
+      <router-link to="/contacto" class="nav-link">Contacto</router-link>
     </nav>
   </header>
 </template>
 
+<script>
+import logo from '../assets/logoNamibia.jpg'; // Ruta correcta
+
+export default {
+  name: 'PHeader',
+  data() {
+    return {
+      logoSrc: logo, // Asignar la imagen importada
+    };
+  },
+};
+</script>
+
+
 <style scoped>
-header {
-  background-color: #f8f9fa;
-  padding: 10px;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #34495e; /* Azul oscuro elegante */
+  border-bottom: 2px solid #2c3e50; /* Línea más oscura */
 }
-nav a {
-  margin-right: 15px;
-  text-decoration: none;
-  color: #007bff;
+.logo img {
+  height: 50px;
+}
+.navigation {
+  display: flex;
+  gap: 20px; /* Espaciado uniforme entre enlaces */
+}
+.navigation .nav-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a6d01; /* Blanco sutil */
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* Transición suave para efectos */
+  position: relative; /* Para efectos decorativos */
+}
+.navigation .nav-link:hover {
+  color: #1abc9c; /* Verde turquesa moderno */
+}
+.navigation .nav-link::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #1abc9c;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -3px; /* Justo debajo del texto */
+  left: 0;
+}
+.navigation .nav-link:hover::after {
+  width: 100%; /* Subrayado animado */
 }
 </style>

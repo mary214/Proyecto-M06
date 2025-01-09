@@ -3,6 +3,7 @@ import HomeView from '../components/HomeView.vue';
 import RopaComponent from '../components/RopaComponent.vue';
 import CalzadoComponent from '../components/CalzadoComponent.vue';
 import ComplementosComponent from '../components/ComplementosComponent.vue';
+import PContacto from '../components/PContacto.vue';
 
 
 const routes = [
@@ -10,6 +11,7 @@ const routes = [
   { path: '/ropa', component: RopaComponent },
   { path: '/calzado', component: CalzadoComponent },
   { path: '/complementos', component: ComplementosComponent },
+  { path: '/contacto', component: PContacto },
 ];
 
 // Llamada a crear router, con dos parametros
