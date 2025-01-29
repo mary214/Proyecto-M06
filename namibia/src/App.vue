@@ -1,24 +1,26 @@
 <template>
   <div>
-    <PHeader/>
-    <router-view/>
-    <h1>Bienvenida a tu primer (segundo?) vue</h1>
-    <router-view></router-view>
-    <img alt="Vue logo" src="./assets/logo.png">
-    <!--<HelloWorld msg="Welcome to Your Vue.js App"/>-->
+    <PHeader class="header" />
+    <router-view v-slot="{ Component }">
+      <transition name="fade">
+        <component :is="Component" />
+      </transition>
+    </router-view>
+    <PFooter />
   </div>
 </template>
 
 <script>
-//import HelloWorld from './components/HelloWorld.vue'
 import PHeader from './components/PHeader.vue';
+import PFooter from './components/PFooter.vue';
 
 export default {
   name: 'App',
   components: {
-    PHeader
-  }
-}
+    PHeader,
+    PFooter,
+  },
+};
 </script>
 
 <style>
@@ -30,5 +32,27 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-</style>
 
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter, 
+.fade-leave-to {
+  opacity: 0;
+}
+
+.header {
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+</style>

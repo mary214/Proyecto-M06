@@ -8,19 +8,20 @@
       <router-link to="/" class="nav-link">Inici</router-link>
       <router-link to="/ropa" class="nav-link">Ropa</router-link>
       <router-link to="/calzado" class="nav-link">Calzado</router-link>
+      <router-link to="/complementos" class="nav-link">Complementos</router-link>
       <router-link to="/contacto" class="nav-link">Contacto</router-link>
     </nav>
   </header>
 </template>
 
 <script>
-import logo from '../assets/logoNamibia.jpg'; // Ruta correcta
+import logo from '../assets/logoNamibia.jpg';
 
 export default {
   name: 'PHeader',
   data() {
     return {
-      logoSrc: logo, // Asignar la imagen importada
+      logoSrc: logo,
     };
   },
 };
@@ -28,6 +29,19 @@ export default {
 
 
 <style scoped>
+
+body, html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+
 .header {
   display: flex;
   justify-content: space-between;
