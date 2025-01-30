@@ -63,11 +63,14 @@
   }
   
   .product-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    margin-bottom: 10px;
-  }
+  width: 100%;
+  max-width: 370px;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
   
   .price {
     font-size: 1.2rem;
