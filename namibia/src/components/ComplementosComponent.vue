@@ -4,12 +4,18 @@
     <p class="category-description">
       Descubre los accesorios perfectos para completar tu estilo con elegancia y sofisticación
     </p>
-    <ProductList :products="complementosProducts" />
+
+    <!-- Buscador productos -->
+    <SearchBar :products="complementosProducts" @search-results="updateFilteredProducts" />
+
+    <!-- Listado productos filtrados -->
+    <ProductList :products="filteredProducts" />
   </div>
 </template>
 
 <script>
 import ProductList from './ProductList.vue';
+import SearchBar from './SearchBarTemp.vue';
 import comp1 from '@/assets/comp1.jpg';
 import comp2 from '@/assets/comp2.jpg';
 import comp3 from '@/assets/comp3.jpg';
@@ -18,6 +24,7 @@ export default {
   name: 'ComplementosComponent',
   components: {
     ProductList,
+    SearchBar,
   },
   data() {
     return {
@@ -39,12 +46,21 @@ export default {
         {
           id: 3,
           name: 'Gafas cuadradas',
-          description: 'Gafas moderno y resistente',
+          description: 'Gafas modernas y resistentes',
           price: 49.99,
           image: comp3,
         },
       ],
+      filteredProducts: [],
     };
+  },
+  created() {
+    this.filteredProducts = this.complementosProducts;
+  },
+  methods: {
+    updateFilteredProducts(filtered) {
+      this.filteredProducts = filtered;
+    },
   },
 };
 </script>
