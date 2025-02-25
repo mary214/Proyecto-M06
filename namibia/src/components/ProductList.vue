@@ -7,7 +7,7 @@
       :description="product.description"
       :price="product.price"
       :image="product.image"
-      @add-to-cart="$emit('add-to-cart', product)"
+      @add-to-cart="$emit('add-to-cart', $event)"
     />
   </div>
 </template>
