@@ -60,12 +60,13 @@ export default {
   },
   computed: {
     cart() {
-      return this.cartItems; // Hace que Vue 3 lo trate como reactivo
+      return this.cartItems || []; // Hace que Vue 3 lo trate como reactivo
     },
   },
   methods: {
     toggleCart() {
       this.showCart = !this.showCart;
+      event.stopPropagation(); 
     },
     changeLanguage() {
       localStorage.setItem('lang', this.$i18n.locale);

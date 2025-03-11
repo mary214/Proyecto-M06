@@ -38,5 +38,13 @@
     "casual_pants": "Pantalones casuales",
     "perfect_for_daily_use": "Perfectos para uso diario",
     "summer_dress": "Vestido de verano",
-    "fresh_and_light_for_summer": "Fresco y ligero para el verano"
+    "fresh_and_light_for_summer": "Fresco y ligero para el verano",
+
+    "finalize_purchase": "Finalizar Compra",
+    "purchase_summary": "Resumen de Compra",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "buy": "Comprar",
+    "purchase_completed": "¡Compra realizada con éxito!"
+
 }

@@ -1,51 +1,49 @@
 <template>
-    <div class="cart">
-      <h2>{{ $t('cart') }}</h2>
-      <ul>
-        <li v-for="(item, index) in cartItems" :key="index">
-          <img :src="item.image" :alt="item.name" class="cart-image" />
-          <span>{{ item.name }} - {{ item.price }} €</span>
-          <button @click="$emit('remove-from-cart', index)">❌</button>
-        </li>
-      </ul>
-    </div>
-  </template>
-  
-  <script>
-  export default {
-    name: 'PCart',
-    props: {
-      cartItems: Array,
-    },
-  };
-  </script>
-  
-  <style scoped>
-  .cart {
-    background: white;
-    border: 1px solid #ddd;
-    padding: 15px;
-    width: 330px;
-    position: fixed;
-    top: 50px;
-    right: 20px;
+   <div class="cart" v-if="cartItems.length > 0">
+    <h2>{{ $t('cart') }}</h2>
+    <ul>
+      <li v-for="(item, index) in cartItems" :key="index">
+        <img :src="item.image" :alt="item.name" class="cart-image" />
+        <span>{{ item.name }} - {{ item.price }} €</span>
+        <button @click="$emit('remove-from-cart', index)">❌</button>
+      </li>
+    </ul>
+    <button 
+      v-if="cartItems.length > 0" 
+      @click="goToCheckout"
+      class="checkout-btn"
+    >
+      {{ $t('finalize_purchase') }}
+    </button>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    goToCheckout() {
+      this.$router.push('/checkout');
+    }
+  },
+
+  props: {
+    cartItems: {
+      type: Array,
+      default: () => []
+    }
   }
-  
-  .cart ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .cart li {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 5px;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  .cart-image {
-    width: 50px;
-  }
-  </style>
-  
+};
+</script>
+
+<style scoped>
+.checkout-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  width: 100%;
+}
+</style>
