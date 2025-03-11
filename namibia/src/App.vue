@@ -1,7 +1,10 @@
 <template>
   <div>
     <PHeader :cartItems="cartItems" @remove-from-cart="removeFromCart" />
-    <router-view :cart-items="cartItems" @add-to-cart="addToCart"></router-view>
+    <router-view />
+    
+    <ProductList :products="productos" @add-to-cart="addToCart" />
+
     <PFooter />
   </div>
 </template>
@@ -9,19 +12,27 @@
 <script>
 import PHeader from './components/PHeader.vue';
 import PFooter from './components/PFooter.vue';
+import ProductList from './components/ProductList.vue';
 
 export default {
   components: {
     PHeader,
     PFooter,
+    ProductList,
   },
   data() {
     return {
       cartItems: [],
+      productos: [
+        { id: 1, name: 'Jersey cómodo', description: 'Ideal para invierno', price: 29.99, image: '/img/ropa2.b35b2d3e.jpg' },
+        { id: 2, name: 'Pantalones casuales', description: 'Perfectos para uso diario', price: 39.99, image: '/img/ropa3.7293b36b.jpg' },
+        // Agrega más productos según necesites...
+      ],
     };
   },
   methods: {
     addToCart(product) {
+      console.log("✅ Producto agregado en App.vue:", product);
       this.cartItems.push(product);
     },
     removeFromCart(index) {

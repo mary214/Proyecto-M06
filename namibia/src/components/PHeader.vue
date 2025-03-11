@@ -23,19 +23,21 @@
     <!-- Botón del carrito -->
     <button @click="toggleCart" class="cart-btn">
       🛒
-      <span v-if="cartItems.length" class="cart-count">{{ cartItems.length }}</span>
+      <span v-if="cart.length" class="cart-count">{{ cart.length }}</span>
     </button>
 
     <!-- Componente PCart -->
     <PCart 
       v-if="showCart" 
-      :cartItems="cartItems" 
+      :cartItems="cart" 
       @remove-from-cart="$emit('remove-from-cart', $event)"
     />
+
   </header>
 </template>
 
 <script>
+//import { computed } from 'vue';
 import PCart from './PCart.vue';
 import logo from '../assets/logoNamibia.jpg';
 
@@ -56,6 +58,11 @@ export default {
       showCart: false,
     };
   },
+  computed: {
+    cart() {
+      return this.cartItems; // Hace que Vue 3 lo trate como reactivo
+    },
+  },
   methods: {
     toggleCart() {
       this.showCart = !this.showCart;
@@ -66,6 +73,7 @@ export default {
   },
 };
 </script>
+
 
 <style scoped>
 .header {

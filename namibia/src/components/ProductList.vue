@@ -7,7 +7,7 @@
       :description="product.description"
       :price="product.price"
       :image="product.image"
-      @add-to-cart="$emit('add-to-cart', product)"
+      @add-to-cart="handleAddToCart"
     />
   </div>
 </template>
@@ -26,10 +26,16 @@ export default {
       required: true,
     },
   },
+  methods: {
+    handleAddToCart(product) {
+      console.log("ProductList reemitiendo add-to-cart con:", product);
+      this.$emit("add-to-cart", product);
+    },
+  },
 };
 </script>
 
-<style>
+<style scoped>
 .product-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
