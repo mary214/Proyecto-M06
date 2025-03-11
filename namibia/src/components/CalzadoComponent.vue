@@ -3,11 +3,13 @@
     <h1>{{ $t("footwear_category") }}</h1>
     <p class="category-description">{{ $t("footwear_description") }}</p>
 
-    <!-- Buscador productos-->
     <SearchBar :products="calzadoProducts" @search-results="updateFilteredProducts" />
 
-    <!-- Listado productos filtrados -->
-    <ProductList :products="filteredProducts" />
+    <!-- Añade @add-to-cart aquí -->
+    <ProductList 
+      :products="filteredProducts" 
+      @add-to-cart="$emit('add-to-cart', $event)" 
+    />
   </div>
 </template>
 

@@ -1,10 +1,7 @@
 <template>
   <div>
     <PHeader :cartItems="cartItems" @remove-from-cart="removeFromCart" />
-    <router-view />
-    
-    <ProductList :products="productos" @add-to-cart="addToCart" />
-
+    <router-view @add-to-cart="addToCart" /> <!-- 🟢 Escucha el evento aquí -->
     <PFooter />
   </div>
 </template>
@@ -12,13 +9,13 @@
 <script>
 import PHeader from './components/PHeader.vue';
 import PFooter from './components/PFooter.vue';
-import ProductList from './components/ProductList.vue';
+// import ProductList from './components/ProductList.vue';
 
 export default {
   components: {
     PHeader,
     PFooter,
-    ProductList,
+   // ProductList,
   },
   data() {
     return {

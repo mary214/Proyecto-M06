@@ -7,7 +7,10 @@
     <SearchBar :products="complementosProducts" @search-results="updateFilteredProducts" />
 
     <!-- Listado productos filtrados -->
-    <ProductList :products="filteredProducts" />
+    <ProductList 
+      :products="filteredProducts"
+      @add-to-cart="$emit('add-to-cart', $event)"  
+      />
   </div>
 </template>
 
