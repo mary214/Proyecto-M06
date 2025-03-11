@@ -6,6 +6,6 @@
 
 <script>
 export default {
-  name: 'PContacto', // Asegúrate de que el nombre coincida
+  name: 'PContacto',
 };
 </script>

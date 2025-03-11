@@ -1,9 +1,7 @@
 <template>
   <div class="category-container">
-    <h1>Complementos</h1>
-    <p class="category-description">
-      Descubre los accesorios perfectos para completar tu estilo con elegancia y sofisticación
-    </p>
+    <h1>{{ $t("accessories") }}</h1>
+    <p class="category-description">{{ $t("accessories_description") }}</p>
 
     <!-- Buscador productos -->
     <SearchBar :products="complementosProducts" @search-results="updateFilteredProducts" />
@@ -31,22 +29,22 @@ export default {
       complementosProducts: [
         {
           id: 1,
-          name: 'Bolso de mano',
-          description: 'Bolso elegante y espacioso',
+          name: this.$t('hand_bag'),
+          description: this.$t('elegant_and_spacious_bag'),
           price: 14.99,
           image: comp1,
         },
         {
           id: 2,
-          name: 'Collar',
-          description: 'Collar elegante',
+          name: this.$t('necklace'),
+          description: this.$t('elegant_necklace'),
           price: 29.99,
           image: comp2,
         },
         {
           id: 3,
-          name: 'Gafas cuadradas',
-          description: 'Gafas modernas y resistentes',
+          name: this.$t('square_glasses'),
+          description: this.$t('modern_and_resistant_glasses'),
           price: 49.99,
           image: comp3,
         },

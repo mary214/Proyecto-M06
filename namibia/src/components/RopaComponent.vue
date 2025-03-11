@@ -1,6 +1,6 @@
 <template>
   <div class="ropa">
-    <h1 class="title">Colección de Ropa</h1>
+    <h1 class="title">{{ $t("clothing_collection") }}</h1>
 
     <SearchBar :products="products" @search-results="updateFilteredProducts" />
 
@@ -35,14 +35,34 @@ export default {
   data() {
     return {
       products: [
-        { id: 1, name: 'Vestido elegante',
-         description: 'Perfecto para eventos',
-         price: 49.99,
-         image: ropa1 },
-         
-        { id: 2, name: 'Jersey cómodo', description: 'Ideal para invierno', price: 29.99, image: ropa2 },
-        { id: 3, name: 'Pantalones casuales', description: 'Perfectos para uso diario', price: 39.99, image: ropa3 },
-        { id: 4, name: 'Vestido de verano', description: 'Fresco y ligero para el verano', price: 34.99, image: ropa4 },
+        {
+          id: 1,
+          name: this.$t('elegant_dress'),
+          description: this.$t('perfect_for_events'),
+          price: 49.99,
+          image: ropa1,
+        },
+        {
+          id: 2,
+          name: this.$t('comfortable_sweater'),
+          description: this.$t('ideal_for_winter'),
+          price: 29.99,
+          image: ropa2,
+        },
+        {
+          id: 3,
+          name: this.$t('casual_pants'),
+          description: this.$t('perfect_for_daily_use'),
+          price: 39.99,
+          image: ropa3,
+        },
+        {
+          id: 4,
+          name: this.$t('summer_dress'),
+          description: this.$t('fresh_and_light_for_summer'),
+          price: 34.99,
+          image: ropa4,
+        },
       ],
       filteredProducts: [],
     };
