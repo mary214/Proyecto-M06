@@ -1,6 +1,6 @@
 <template>
     <div class="cart">
-      <h2>Cesta de la compra</h2>
+      <h2>{{ $t('cart') }}</h2>
       <ul>
         <li v-for="(item, index) in cartItems" :key="index">
           <img :src="item.image" :alt="item.name" class="cart-image" />

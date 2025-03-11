@@ -1,16 +1,24 @@
 <template>
   <header class="header">
     <div class="logo">
-      <img alt="Logo NAMIBIA" :src="logoSrc">
+      <img :alt="$t('logo_alt')" :src="logoSrc">
     </div>
 
     <nav class="navigation">
-      <router-link to="/" class="nav-link">Inicio</router-link>
-      <router-link to="/ropa" class="nav-link">Ropa</router-link>
-      <router-link to="/calzado" class="nav-link">Calzado</router-link>
-      <router-link to="/complementos" class="nav-link">Complementos</router-link>
-      <router-link to="/contacto" class="nav-link">Contacto</router-link>
+      <router-link to="/" class="nav-link">{{ $t("home") }}</router-link>
+      <router-link to="/ropa" class="nav-link">{{ $t("clothing") }}</router-link>
+      <router-link to="/calzado" class="nav-link">{{ $t("footwear") }}</router-link>
+      <router-link to="/complementos" class="nav-link">{{ $t("accessories") }}</router-link>
+      <router-link to="/contacto" class="nav-link">{{ $t("contact") }}</router-link>
     </nav>
+
+    <!-- Selector de idiomas -->
+    <select v-model="$i18n.locale" @change="changeLanguage">
+      <option value="ca">Català</option>
+      <option value="es">Español</option>
+      <option value="en">English</option>
+      <!--<option value="fr">Français</option>-->
+    </select>
 
     <!-- Botón del carrito -->
     <button @click="toggleCart" class="cart-btn">
@@ -51,6 +59,9 @@ export default {
   methods: {
     toggleCart() {
       this.showCart = !this.showCart;
+    },
+    changeLanguage() {
+      localStorage.setItem('lang', this.$i18n.locale);
     },
   },
 };

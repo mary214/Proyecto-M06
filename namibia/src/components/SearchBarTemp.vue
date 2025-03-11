@@ -4,15 +4,15 @@
       <input
         type="text"
         v-model="searchQueryInput"
-        placeholder="Busca un producto..."
+        :placeholder="$t('search_placeholder')"
         class="search-bar"
       />
-      <button type="submit" class="search-btn">Buscar</button>
+      <button type="submit" class="search-btn">{{ $t('search_btn') }}</button>  <!-- Traducción para el botón -->
     </form>
 
     <p v-if="searchError" class="error-message">{{ searchError }}</p>
     <p v-if="!searchError && filteredProducts.length === 0" class="no-results">
-      No se ha encontrado ningún producto.
+      {{ $t('no_results') }} <!-- Traducción para no resultados -->
     </p>
   </div>
 </template>

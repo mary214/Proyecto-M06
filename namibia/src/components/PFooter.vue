@@ -1,11 +1,11 @@
 <template>
   <footer class="footer p-4 text-light">
     <nav class="footer-navigation d-flex justify-content-center gap-4 mb-3">
-      <router-link to="/" class="nav-link">Inici</router-link>
-      <router-link to="/ropa" class="nav-link">Ropa</router-link>
-      <router-link to="/calzado" class="nav-link">Calzado</router-link>
-      <router-link to="/complementos" class="nav-link">Complementos</router-link>
-      <router-link to="/contacto" class="nav-link">Contacto</router-link>
+      <router-link to="/" class="nav-link">{{ $t("home") }}</router-link>
+      <router-link to="/ropa" class="nav-link">{{ $t("clothing") }}</router-link>
+      <router-link to="/calzado" class="nav-link">{{ $t("footwear") }}</router-link>
+      <router-link to="/complementos" class="nav-link">{{ $t("accessories") }}</router-link>
+      <router-link to="/contacto" class="nav-link">{{ $t("contact") }}</router-link>
     </nav>
 
 
@@ -22,7 +22,7 @@
     </div>
 
     <div class="footer-info text-center">
-      <p>&copy; {{ currentYear }} Namibia. Todos los derechos reservados.</p>
+      <p>&copy; {{ currentYear }} Namibia. {{ $t("footer_rights") }}</p>
     </div>
 
     

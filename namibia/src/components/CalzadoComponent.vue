@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h1>Categoría de Calzados</h1>
-    <p class="category-description">
-      Encuentra el mejor calzado para cada ocasión, desde zapatillas cómodas hasta elegantes zapatos casuales.
-    </p>
+    <h1>{{ $t("footwear_category") }}</h1>
+    <p class="category-description">{{ $t("footwear_description") }}</p>
 
     <!-- Buscador productos-->
     <SearchBar :products="calzadoProducts" @search-results="updateFilteredProducts" />
@@ -31,27 +29,27 @@ export default {
       calzadoProducts: [
         {
           id: 1,
-          name: 'Zapatillas Running',
-          description: 'Zapatillas cómodas para correr',
+          name: this.$t('running_shoes'), 
+          description: this.$t('comfortable_running_shoes'),
           price: 79.99,
           image: calzado1,
         },
         {
           id: 2,
-          name: 'Botas',
-          description: 'Botas resistentes',
+          name: this.$t('boots'),
+          description: this.$t('resistant_boots'),
           price: 89.99,
           image: calzado2,
         },
         {
           id: 3,
-          name: 'Zapatos Casuales',
-          description: 'Zapatos ideales para el día a día',
+          name: this.$t('casual_shoes'),
+          description: this.$t('daily_shoes'),
           price: 59.99,
           image: calzado3,
         },
       ],
-      filteredProducts: [], // Productos filtrados por el buscador
+      filteredProducts: [],
     };
   },
   created() {

@@ -2,28 +2,28 @@
   <div class="home">
     <!-- Sección de introducción -->
     <section class="intro">
-      <h1>Benvinguts a <span>NAMIBIA</span></h1>
-      <p>Descobreix les millors col·leccions de roba, calçat i complements per a dona.</p>
+      <h1>{{ $t("welcome") }}</h1>
+      <p>{{ $t("welcome_large") }}</p>
     </section>
 
     <!-- Sección de categorías -->
     <section class="categories">
       <div class="category">
         <router-link to="/ropa" class="no-link">
-          <img src="@/assets/ropa.png" alt="Ropa" class="img-fluid" />
-          <h2>Ropa</h2>
+          <img src="@/assets/ropa.png" :alt="$t('clothing')" class="img-fluid" />
+          <h2>{{ $t("clothing") }}</h2>
         </router-link>
       </div>
       <div class="category">
         <router-link to="/calzado" class="no-link">
-          <img src="@/assets/calzado.png" alt="Calzado" class="img-fluid" />
-          <h2>Calzado</h2>
+          <img src="@/assets/calzado.png" :alt="$t('footwear')" class="img-fluid" />
+          <h2>{{ $t("footwear") }}</h2>
         </router-link>
       </div>
       <div class="category">
         <router-link to="/complementos" class="no-link">
-          <img src="@/assets/complementos.png" alt="Complementos" class="img-fluid" />
-          <h2>Complementos</h2>
+          <img src="@/assets/complementos.png" :alt="$t('accessories')" class="img-fluid" />
+          <h2>{{ $t("accessories") }}</h2>
         </router-link>
       </div>
     </section>
