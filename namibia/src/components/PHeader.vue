@@ -20,18 +20,19 @@
       <!--<option value="fr">Français</option>-->
     </select>
 
-    <!-- Botón del carrito -->
-    <button @click="toggleCart" class="cart-btn">
-      🛒
-      <span v-if="cart.length" class="cart-count">{{ cart.length }}</span>
-    </button>
+  <!-- Botón del carrito -->
+  <button @click="toggleCart" class="cart-btn">
+    🛒
+    <span v-if="cart.length" class="cart-count">{{ cart.length }}</span>
+  </button>
 
-    <!-- Componente PCart -->
-    <PCart 
-      v-if="showCart" 
-      :cartItems="cart" 
-      @remove-from-cart="$emit('remove-from-cart', $event)"
-    />
+  <!-- Componente PCart -->
+  <PCart 
+    v-if="showCart" 
+    :cartItems="cart" 
+    @remove-from-cart="$emit('remove-from-cart', $event)"
+  />
+
 
   </header>
 </template>

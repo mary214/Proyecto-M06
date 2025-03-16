@@ -30,7 +30,7 @@ export default {
   },
   methods: {
     addToCart(product) {
-      console.log("✅ Producto agregado en App.vue:", product);
+      console.log("Producto agregado en App.vue:", product);
       this.cartItems.push(product);
     },
     removeFromCart(index) {
