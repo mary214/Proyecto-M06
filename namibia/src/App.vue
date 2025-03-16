@@ -1,12 +1,14 @@
 <template>
   <div>
     <PHeader :cartItems="cartItems" @remove-from-cart="removeFromCart" />
-    <router-view @add-to-cart="addToCart" />
-    <CheckoutSummary 
-      v-if="$route.path === '/checkout'"
-      :cartItems="cartItems"
-      @clear-cart="clearCart"
-    />
+    <router-view v-slot="{ Component }">
+      <component 
+        :is="Component" 
+        :cartItems="cartItems" 
+        @clear-cart="clearCart" 
+        @add-to-cart="addToCart" 
+      />
+    </router-view>
     <PFooter />
   </div>
 </template>
@@ -14,13 +16,11 @@
 <script>
 import PHeader from './components/PHeader.vue';
 import PFooter from './components/PFooter.vue';
-import CheckoutSummary from './components/CheckoutSummary.vue';
 
 export default {
   components: {
     PHeader,
-    PFooter,
-    CheckoutSummary
+    PFooter
   },
   data() {
     return {

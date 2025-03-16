@@ -38,6 +38,13 @@
     "casual_pants": "Casual Pants",
     "perfect_for_daily_use": "Perfect for daily use",
     "summer_dress": "Summer Dress",
-    "fresh_and_light_for_summer": "Fresh and light for summer"
+    "fresh_and_light_for_summer": "Fresh and light for summer",
+    "finalize_purchase": "Finalize Purchase",
+    "purchase_summary": "Purchase Summary",
+    "subtotal": "Subtotal",
+    "total": "Total",
+    "buy": "Buy",
+    "purchase_completed": "Purchase completed successfully!"
+    
   }
   
